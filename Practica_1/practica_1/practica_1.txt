@@ -1,0 +1,132 @@
+Entrega 1 (A2)
+
+- Key:	3676F3FBE3C6E9443F7EDCB1BA1E9E5F
+- IV:	DC8627AF5BD2E1572E0E9E46B2256231
+
+➜  A2 git:(master) ✗ cat texto-aes-128-cbc.txt 
+8vzfm2yE50vzNjOuAhr52JDtF9QfWO7d+YT3mDTDBWf0rAlSXvRVSJT/np39Q8pP
+1uA4bUV+iLmwnj4aEoApnDoPxAqP8dwHis2SRWfGWtb+3uJR4KWCTGI+QhSyuMwN
+v/gZmldB2HCdjllqeu1FQBRlfTL7mgePZfqI2WLhpaK9IMzBXM44z16FgVn1Yl2x
+4A+SXUCACRnDiYcXemLSDthODCIZujt8/1h4XyHaq04zjuntTxmgdwUvIj7KdNFw
+5T2Z/ioVSa0h43+4U7yT5yvE6We1pqEOnKibK05WcKe/Or+6Rnc0X1NjSnNT1xRK
+z2vUZcfQAJ4RWk7Ictte2ASY91KIQkp1+lIgXg4o/2qiGD992KYLKKVuBBHZDW7h
+2kbZr8smqCmdE7FsUVRfQ3mM+clM3W0QjtWFKEGN5hOyX0IO7TMDjSyNzj+u2aKY
+A6/J799sFL+pc+wtOgy+Pj2KrtFl1iM2VQL51T5ADnNxtiXppmoFSIwhw+fgp/31
+bg/LKo5U82Xwma6dsPPy3OYwkUdmC6zsquSk/Bh8HElxAKkOqWkCqG/9zs6IMFeb
+n7RJt9NykCsUViSQSD3UUw==
+
+Entrega 2 (A3)
+
+- Password:	seguridad
+
+➜  A3 git:(master) ✗ cat texto-aes-128-cbc-1.txt 
+U2FsdGVkX18fAgChwqNz4/P3OKP6+sRjrysMN2q7Tl565LKFqNz6upTMLDEsq5LE
+0j/Rpz3cCErnEelZXL9BzvGz+Hg+XEeCR5bSa0Tv5n3LqnHirWZw5d8JF2FhGFMt
+3socDcwzzkUy9D3V/UOP9l3mjTvsob3/iwHWnSkFmc/RtXZPhUzXRyV71SNm/0v/
+8bFLiCtm008Nf+FsCGHgt/5cMrocOrsjTddEH+skaYsAYIDn9keH3SnJnyq/fKhH
+R94UwwiXgxnNGBvQF3ncY2U9UfauDFo60zsaG6bW9Ea3zSPnrX+lwTtSpL4BPtsp
++ISABHqXnHyfpPBu3uQqLmZV37TM73TolyPXm7Av6Jy5WhpQzBwEeSGqmudj9pK8
+V68gLD/LdOsoZwE7DQsGp2VIUg+pkkhOOSWBgdLyVM6hx4XLEd66Dzod0fl4phAI
+OThDTobPJ9Wl15T/wWmqft4Su9msgPwGjR0NwHNzPicvRxvYGp7o6f9Dox4oku9C
+W17hPRWCyGRdbk8B6tsA5/4VB1xpVA66zGflVldLMNt5tvtEWiXVXJ8JOLeyOZfz
+h13MlBM/VJv51N3V0jBwTfU93tLqMXEva4Ce1MYh9Qc=
+
+Son distintos ya que se ha usado la misma password pero distinto SALT, KEY y IV.
+
+Entrega 3 (A4)
+
+➜  A4 git:(master) ✗ openssl enc -e -aes-128-cbc -a -pbkdf2 -p -in textoplano1.txt -out texto-aes-128-cbc-1.txt -pass pass:seguridad
+salt=BCB542B7B4CB90C3
+key=0E8D3022D469C2F9C231B86366182E89
+iv =10EC1AACC52DB770AC91C9DC8D38C4A2
+➜  A4 git:(master) ✗ openssl enc -e -aes-128-cbc -a -pbkdf2 -p -in textoplano1.txt -out texto-aes-128-cbc-2.txt -pass pass:seguridad
+salt=EA2789F89D252819
+key=4D2AB981BC3C0A5926564BE87C89C38C
+iv =6F1577AC6F8408F053F6106C56185120
+➜  A4 git:(master) ✗ diff texto-aes-128-cbc-1.txt texto-aes-128-cbc-2.txt                        
+1,10c1,10
+< U2FsdGVkX1+8tUK3tMuQwxJGgOKJYw1NPSTS8nr0nG0jMX6Ro1FSTf0gG/uITLOB
+< XYfp52YAKcxBcpLdUWMwU62Cz5+LqjpSiP7SVl3BETHwP/Q55HClZBcQkv28KEmG
+< S5MGuOSgf9w6f1vC/OZPqBL3WO5KE6zRIBzWpC/QyK/Gw8BvoPJB/PcoqdPN7mWQ
+< s2x7uoC6KAY5V11Kwtu92vGjp/iAqC6/IiH8+hLczfli4MFDEUbXA0nxWhhl1y/Z
+< zavao/0O+dOTeDXqbY/a16x+e/4UV4JYk1WWO9P8oxAmohO/mUcJCxTcAYIqto2m
+< JbAf1Lk6QQX3b8SeUeWTdDYPeolsUabvu+/toMTnHMO4w94Gj+HHLpAvW/s45PvK
+< Nk3fFexJ9JpmBr0xtMtODMJRRv7dg5ImGAcpRxcd1GiPyRvMyrmOhnKx24sVS62G
+< QQFHKzWUsRHwCdZzQyV/9dqfRilBqEQmlsI4w+KEtyRYV5Ag4Z20qi8UbmjCRaSD
+< 5pXcR/DjRI/GG7Hqi9ol9r68BxLgoAR+AcQusWJ7LXdlMp7sEO4YmuGaqjvux/lp
+< D9ktfOSm6NuRlBc2eNs620LSz8WB4n3avg/xOOYBBk4=
+---
+> U2FsdGVkX1/qJ4n4nSUoGel5mM632jrP/KsDwsMyq2CGtfkEQdoHS58wTAKcge93
+> Pc6Ry7oH9togdjFITPNc7MNDdeG0MZ122xPay4ZVUFAel5hGFhbsEgFsB4WL6hnf
+> tkmvbUbyIVoYd+fWvrhr4Ucyy4/e4r4ftbIfot4eruJHFqLQpNwhqfGWYPckjeUQ
+> +9FB6nWDIl6pDFEIu6w6GxM8cXb7xI4ltuvClrcVv5alnkSq6JK1u/T02WylhCwK
+> lsrGwQjjpoyn9dUhRxO9YO1RLl4FWYk/EuYhVisCSd6sCtSdzm87DINAslzwIuML
+> bPUYvpk3rTxQVthHbjlE3+celgKUo9UOcyW7l6lHWdiYArf+JxJH8A6uNNboEHqe
+> y4SZsqf+OnPnt1qPG4A2Yfa0QYALHQQsK2C+AyNG/4ZIWjjFYm+0Vpmk0oA/DdaL
+> 2UyY/fsd+7fOL28RYtrDOGMQYojpthQ6A98fyR2DnN7ylZqkobnTAN9Ej/LsfBuN
+> UibDdYQPRYNtuiGHajSE9vubKY/mzO6aAaXIsWHW9BrSzKTXnsK2IySOlA5k3WwX
+> E4iwxfHvGk+m7ssT3Fx0CPm/UX0MWh3jB3ioAyBm7rU=
+
+Entrega 4 (A5)
+
+➜  A5 git:(master) ✗ openssl enc -a -e -rc4 -p -pbkdf2 -in textoplano1.txt -out texto-rc4-1.txt -pass pass:seguridad
+salt=9DBAF5C2FE646F91
+key=A85D5EB49A60C9E853BDF5F0F55FA7AB
+➜  A5 git:(master) ✗ openssl enc -a -e -rc4 -p -pbkdf2 -in textoplano1.txt -out texto-rc4-2.txt -pass pass:seguridad
+salt=A50F0C341E0374C6
+key=2ADC83BC6F4C047895CDBA974BBCC9D8
+➜  A5 git:(master) ✗ diff texto-rc4*.txt
+1,10c1,10
+< U2FsdGVkX1+duvXC/mRvkSEn+hu/o6WfuPjWEEHYo6FKWJj7qPHRJef/wb+j02qo
+< BmBr/n5SDLamgcyoyCQFAafStcWkZJkF63amDrEAY5+C0/lS2Xw6EBO4dvgdogAp
+< yBgeELvsjidyshcANsPFpcEdIlTG2lOWDA2RD+hDAnYgGp5+RTghJi3r6kp+3Lzd
+< tk09WKPe72Q9ivPYxcNQyNM8wh8bZuzFEXEIMYi+oqa5ZQUGuC7DGvSL0FJhx3sd
+< smZFt5P8Ez4bHKx84EgO9NuAF6aG/CYc/vOvHpEx5dja7G9LtXieCS2eOVfo8bFV
+< q/0Qme2PXfpUocadfPusvbV/SKdcUGHFPdn7h73y/Cy5ptjsPXxuudEUU78dct3h
+< PpYn8e/V4PN13iY33XGsYlFPq/XECB5pOhBIlej3jaFrmN+7eGbcBFviLp737Dat
+< Z8fyJGa2W5GdzSbfn3F22gIInuviY469EkstJPinXPfUdOg3x2kljT9aiubxRecX
+< m0G/m3koOPJn8j191FrVlm+QoIfLl8Yb3ndefcUa4CLwatqoBIbCijxeiUDGGLth
+< UCyVZLxPhHtBmnJjiKaP+jVegjuPYKTw1ulP71hc
+---
+> U2FsdGVkX1+lDww0HgN0xu3ZbEhF1vHaikZnGR+8csl+ydhHcoP6rTPK01xGCwY/
+> R3p3M/cYmM2yM9O3lu5WBsTT2W0ykbKIGu/XWIPdwnOF4EgxoPsbrGvI7rKxakSQ
+> coG3XuLiITkM3yCj5XSLUjhX4hdaQ9IOnTz5YMtR7ml27pkBm0wFKe25yj5D0v5D
+> VAWYyUYcubpjq9ItfmhfEb3goGFgM1uPxdAPjE0HZYeYirCAMXu4gRLYdPeQoXHz
+> NpWyM+PRkBtInn2OjcokA1Z5nco2kmMz7Jj69Cpw08R2S8aufJvkjemNglAiA169
+> IbZdYgPGmlhR0BNQrY8E2NqI95yWmNovmX/c5SE+D7PC/bml+jrnih8IQbeShf5m
+> PBPWXmvbzFm58PtoDs5w24KI9U2tGmRsR0qRuqVYOQyZUxVQXRtOCktS4JPNzOLi
+> qjTAsFj5GkLk1Z0uKnlA13i867+gR5ulEe8df8aRwmPsb3Z2zKE35/hKoM+ATIVQ
+> GuZrPL829fQnii32+LH6FdkU3LC+MgDpm9kW/iIv6NdfVTMEe0LI8bfhqvzRmBV1
+> krSecnKgxuEr8bndDef68wUg06bZDWL2YaaHFkYl
+
+Entrega 5 (A6)
+
+➜  A6 git:(master) ✗ openssl dgst -sha1 services.txt
+SHA1(services.txt)= 034e941ef22589275efa6983bd957e99601c1fca
+➜  A6 git:(master) ✗ openssl dgst -sha1 hosts.txt   
+SHA1(hosts.txt)= cd5ff4f4fd8cef722ece0fbec283a22a27f48c8b
+
+Entrega 6 (A6)
+
+➜  A6 git:(master) ✗ openssl dgst -sha1 -hmac seguridad services.txt
+HMAC-SHA1(services.txt)= 3debedacccca3fa3c16725f3716f9bbe12d53b62
+➜  A6 git:(master) ✗ openssl dgst -sha256 -hmac seguridad services.txt
+HMAC-SHA256(services.txt)= 78b9dd1ed9c0c82bedf9b63a0fe0fa3887e075e768d97a79e141c3ce96b34296
+➜  A6 git:(master) ✗ openssl dgst -sha512 -hmac seguridad services.txt
+HMAC-SHA512(services.txt)= 0b21fee355843d83e9d00d8fe37de66b0a012e1f172f10d67e5db48393de25bc41dfa68e70f4c5f4a17ae05a5512eede3edcdfb8df40e8b514a3262df177df9f
+
+Entrega 7 (B1)
+
+(fichero adjunto)
+
+Entrega 8 (B2)
+
+➜  B2 git:(master) ✗ gpg2 --print-md SHA1 services.txt
+services.txt: 034E 941E F225 8927 5EFA  6983 BD95 7E99 601C 1FCA
+➜  B2 git:(master) ✗ gpg2 --print-md SHA256 services.txt
+services.txt: 06B27CE1 DBD14DFB 0F88ACA8 FE0654ED 4E9200BE 85B25A64 3927F129
+              DF0494C2
+➜  B2 git:(master) ✗ gpg2 --print-md SHA512 services.txt
+services.txt: 19657507 7695741D 57D2102C A9B364BE 2493156C 609D4849 4A3DA007
+              5A85F3E2 D44818DA D1E272FD CDBAF924 025B8938 0697D2CA 14FCAD6D
+              824CEC6E 790F1821
