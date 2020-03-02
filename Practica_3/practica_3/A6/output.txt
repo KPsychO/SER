@@ -1,0 +1,6 @@
+➜  A6 git:(master) ✗ gpg --check-trustdb                    
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   3  signed:   1  trust: 0-, 0q, 0n, 0m, 0f, 3u
+gpg: depth: 1  valid:   1  signed:   1  trust: 0-, 0q, 0n, 1m, 0f, 0u
+gpg: next trustdb check due at 2020-03-06
+
