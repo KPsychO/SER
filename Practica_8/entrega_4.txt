@@ -1,0 +1,74 @@
+root@debian:/home/usuario# sudo ip xfrm policy
+src 192.168.2.0/24 dst 192.168.1.0/24 
+	dir fwd priority 1859 ptype main 
+	tmpl src 2.2.2.2 dst 1.1.1.1
+		proto esp reqid 2 mode tunnel
+src 192.168.2.0/24 dst 192.168.1.0/24 
+	dir in priority 1859 ptype main 
+	tmpl src 2.2.2.2 dst 1.1.1.1
+		proto esp reqid 2 mode tunnel
+src 192.168.1.0/24 dst 192.168.2.0/24 
+	dir out priority 1859 ptype main 
+	tmpl src 1.1.1.1 dst 2.2.2.2
+		proto esp reqid 2 mode tunnel
+src ::/0 dst ::/0 
+	socket out priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket in priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket out priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket in priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket out priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket in priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+root@debian:/home/usuario# sudo ip xfrm state
+src 1.1.1.1 dst 2.2.2.2
+	proto esp spi 0xc2e5de56 reqid 2 mode tunnel
+	replay-window 32 flag af-unspec
+	auth-trunc hmac(sha1) 0xfaa92ea62a35d51182dade75af2e06db406b2628 96
+	enc cbc(aes) 0x06a2945cccbc3b69ede91c05ca6904f1
+src 2.2.2.2 dst 1.1.1.1
+	proto esp spi 0xc48898cc reqid 2 mode tunnel
+	replay-window 32 flag af-unspec
+	auth-trunc hmac(sha1) 0x6b9e4edf13fe17ce4a8e50979bf773d9d04d5e19 96
+	enc cbc(aes) 0x8ca00749b57efb9dd2a56467e4bccd77
+src 1.1.1.1 dst 2.2.2.2
+	proto esp spi 0xc47400a4 reqid 1 mode tunnel
+	replay-window 32 flag af-unspec
+	auth-trunc hmac(sha1) 0xf096f4035b0951bc31d25f732ae870b35590fa28 96
+	enc cbc(aes) 0x7c4cdbef404e619a89ffbe914bbef521
+src 2.2.2.2 dst 1.1.1.1
+	proto esp spi 0xcac068d9 reqid 1 mode tunnel
+	replay-window 32 flag af-unspec
+	auth-trunc hmac(sha1) 0x0a5fb53c55b545231f703c69e10f54f0a345553b 96
+	enc cbc(aes) 0x28c6a6ba603c3c48847c3ffca4fd6d79

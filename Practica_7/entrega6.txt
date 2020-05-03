@@ -1,0 +1,8 @@
+usuario@debian:~$ sudo cat /var/log/snort/alert
+
+[**] [1:10000003:1] FTP server Smiley Face Backdoor [**]
+[Priority: 0] 
+04/01-13:25:36.206425 1.1.1.10:33148 -> 192.168.1.11:21
+TCP TTL:63 TOS:0x0 ID:7135 IpLen:20 DgmLen:64 DF
+***AP*** Seq: 0xF615BB0D  Ack: 0x7BC87883  Win: 0x391  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 2074286 107332 

@@ -1,0 +1,24 @@
+usuario@debian:~$ sudo cat /var/log/snort/alert
+[**] [1:366:7] ICMP PING *NIX [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-17:52:34.883295 1.1.1.10 -> 192.168.1.10
+ICMP TTL:63 TOS:0x0 ID:5877 IpLen:20 DgmLen:84 DF
+Type:8  Code:0  ID:5084   Seq:1  ECHO
+
+[**] [1:384:5] ICMP PING [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-17:52:34.883295 1.1.1.10 -> 192.168.1.10
+ICMP TTL:63 TOS:0x0 ID:5877 IpLen:20 DgmLen:84 DF
+Type:8  Code:0  ID:5084   Seq:1  ECHO
+
+[**] [1:366:7] ICMP PING *NIX [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-17:52:35.885081 1.1.1.10 -> 192.168.1.10
+ICMP TTL:63 TOS:0x0 ID:6067 IpLen:20 DgmLen:84 DF
+Type:8  Code:0  ID:5084   Seq:2  ECHO
+
+[**] [1:384:5] ICMP PING [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-17:52:35.885081 1.1.1.10 -> 192.168.1.10
+ICMP TTL:63 TOS:0x0 ID:6067 IpLen:20 DgmLen:84 DF
+Type:8  Code:0  ID:5084   Seq:2  ECHO

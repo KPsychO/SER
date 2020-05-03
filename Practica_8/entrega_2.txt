@@ -1,0 +1,62 @@
+root@debian:/home/usuario# sudo ip xfrm policy
+src 192.168.2.0/24 dst 192.168.1.0/24 
+	dir fwd priority 2147483648 ptype main 
+	tmpl src 2.2.2.2 dst 1.1.1.1
+		proto esp reqid 0 mode tunnel
+src 192.168.2.0/24 dst 192.168.1.0/24 
+	dir in priority 2147483648 ptype main 
+	tmpl src 2.2.2.2 dst 1.1.1.1
+		proto esp reqid 0 mode tunnel
+src 192.168.1.0/24 dst 192.168.2.0/24 
+	dir out priority 2147483648 ptype main 
+	tmpl src 1.1.1.1 dst 2.2.2.2
+		proto esp reqid 0 mode tunnel
+src ::/0 dst ::/0 
+	socket out priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket in priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket out priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket in priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket out priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket in priority 0 ptype main 
+src ::/0 dst ::/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket in priority 0 ptype main 
+src 0.0.0.0/0 dst 0.0.0.0/0 
+	socket out priority 0 ptype main 
+root@debian:/home/usuario# sudo ip xfrm state
+src 2.2.2.2 dst 1.1.1.1
+	proto esp spi 0x00000301 reqid 0 mode tunnel
+	replay-window 0 
+	auth-trunc hmac(md5) 0xeeb2e184fef474aedc70bfb0981fd3dd 96
+	enc cbc(des3_ede) 0x524a2c4f4bf4c1555ccacf08d8d186f08e07668630b85c9f
+	sel src 0.0.0.0/0 dst 0.0.0.0/0 
+src 1.1.1.1 dst 2.2.2.2
+	proto esp spi 0x00000201 reqid 0 mode tunnel
+	replay-window 0 
+	auth-trunc hmac(md5) 0xc75f8c099cc96fcf074ca15ba7dbfe7f 96
+	enc cbc(des3_ede) 0x52bafd16a86f93589e12527d350fdc660f40c3b2954856be
+	sel src 0.0.0.0/0 dst 0.0.0.0/0

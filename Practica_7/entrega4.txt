@@ -1,0 +1,16 @@
+kusuario@debian:~$ sudo cat /var/log/snort/alert
+
+[**] [112:2:1] (spp_arpspoof) Ethernet/ARP Mismatch request for Source [**]
+04/01-13:08:44.841732 
+
+[**] [112:2:1] (spp_arpspoof) Ethernet/ARP Mismatch request for Source [**]
+04/01-13:08:46.843304 
+
+[**] [112:2:1] (spp_arpspoof) Ethernet/ARP Mismatch request for Source [**]
+04/01-13:08:48.844667 
+
+[**] [112:2:1] (spp_arpspoof) Ethernet/ARP Mismatch request for Source [**]
+04/01-13:08:50.846208 
+
+[**] [112:2:1] (spp_arpspoof) Ethernet/ARP Mismatch request for Source [**]
+04/01-13:08:52.847033 

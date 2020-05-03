@@ -1,0 +1,28 @@
+usuario@debian:~$ sudo cat /var/log/snort/alert
+
+[**] [1:453:5] ICMP Timestamp Request [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-19:14:19.532926 1.1.1.10 -> 192.168.1.10
+ICMP TTL:37 TOS:0x0 ID:15541 IpLen:20 DgmLen:40
+Type:13  Code:0  ID: 495  Seq: 0  TIMESTAMP REQUEST
+
+[**] [122:1:0] (portscan) TCP Portscan [**]
+[Priority: 3] 
+03/31-19:14:32.539017 1.1.1.10 -> 192.168.1.10
+PROTO:255 TTL:64 TOS:0x0 ID:17367 IpLen:20 DgmLen:154 DF
+
+[**] [1:1421:11] SNMP AgentX/tcp request [**]
+[Classification: Attempted Information Leak] [Priority: 2] 
+03/31-19:14:32.566318 1.1.1.10:43741 -> 192.168.1.10:705
+TCP TTL:44 TOS:0x0 ID:59197 IpLen:20 DgmLen:44
+******S* Seq: 0xE1349099  Ack: 0x0  Win: 0x400  TcpLen: 24
+TCP Options (1) => MSS: 1460 
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=2002-0013][Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=2002-0012][Xref => http://www.securityfocus.com/bid/4132][Xref => http://www.securityfocus.com/bid/4089][Xref => http://www.securityfocus.com/bid/4088]
+
+[**] [1:1418:11] SNMP request tcp [**]
+[Classification: Attempted Information Leak] [Priority: 2] 
+03/31-19:14:32.570448 1.1.1.10:43741 -> 192.168.1.10:161
+TCP TTL:39 TOS:0x0 ID:53047 IpLen:20 DgmLen:44
+******S* Seq: 0xE1349099  Ack: 0x0  Win: 0x400  TcpLen: 24
+TCP Options (1) => MSS: 1460 
+[Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=2002-0013][Xref => http://cve.mitre.org/cgi-bin/cvename.cgi?name=2002-0012][Xref => http://www.securityfocus.com/bid/4132][Xref => http://www.securityfocus.com/bid/4089][Xref => http://www.securityfocus.com/bid/4088]

@@ -1,0 +1,48 @@
+usuario@debian:~$ sudo cat /var/log/snort/alert
+[**] [1:366:7] ICMP PING *NIX [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-18:05:28.672579 1.1.1.10 -> 192.168.1.10
+ICMP TTL:63 TOS:0x0 ID:48082 IpLen:20 DgmLen:84 DF
+Type:8  Code:0  ID:5089   Seq:1  ECHO
+
+[**] [1:384:5] ICMP PING [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-18:05:28.672579 1.1.1.10 -> 192.168.1.10
+ICMP TTL:63 TOS:0x0 ID:48082 IpLen:20 DgmLen:84 DF
+Type:8  Code:0  ID:5089   Seq:1  ECHO
+
+[**] [1:366:7] ICMP PING *NIX [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-18:06:58.897090 1.1.1.10 -> 192.168.1.10
+ICMP TTL:100 TOS:0x0 ID:48190 IpLen:20 DgmLen:228 DF
+Type:8  Code:0  ID:5123   Seq:1  ECHO
+
+[**] [1:480:5] ICMP PING speedera [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-18:06:58.897090 1.1.1.10 -> 192.168.1.10
+ICMP TTL:100 TOS:0x0 ID:48190 IpLen:20 DgmLen:228 DF
+Type:8  Code:0  ID:5123   Seq:1  ECHO
+
+[**] [1:10000001:1] Special ping [**]
+[Priority: 0] 
+03/31-18:06:58.897090 1.1.1.10 -> 192.168.1.10
+ICMP TTL:100 TOS:0x0 ID:48190 IpLen:20 DgmLen:228 DF
+Type:8  Code:0  ID:5123   Seq:1  ECHO
+
+[**] [1:366:7] ICMP PING *NIX [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-18:06:59.899095 1.1.1.10 -> 192.168.1.10
+ICMP TTL:100 TOS:0x0 ID:48425 IpLen:20 DgmLen:228 DF
+Type:8  Code:0  ID:5123   Seq:2  ECHO
+
+[**] [1:480:5] ICMP PING speedera [**]
+[Classification: Misc activity] [Priority: 3] 
+03/31-18:06:59.899095 1.1.1.10 -> 192.168.1.10
+ICMP TTL:100 TOS:0x0 ID:48425 IpLen:20 DgmLen:228 DF
+Type:8  Code:0  ID:5123   Seq:2  ECHO
+
+[**] [1:10000001:1] Special ping [**]
+[Priority: 0] 
+03/31-18:06:59.899095 1.1.1.10 -> 192.168.1.10
+ICMP TTL:100 TOS:0x0 ID:48425 IpLen:20 DgmLen:228 DF
+Type:8  Code:0  ID:5123   Seq:2  ECHO

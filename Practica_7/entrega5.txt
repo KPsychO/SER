@@ -1,0 +1,8 @@
+usuario@debian:~$ sudo cat /var/log/snort/alert
+
+[**] [1:10000002:1] External Access to Tomcat Manager [**]
+[Priority: 0] 
+04/01-13:22:47.489492 1.1.1.10:53272 -> 192.168.1.11:8180
+TCP TTL:63 TOS:0x0 ID:32229 IpLen:20 DgmLen:472 DF
+***AP*** Seq: 0x237C7C0A  Ack: 0xE4A11F5F  Win: 0x391  TcpLen: 32
+TCP Options (3) => NOP NOP TS: 2032107 91060 
