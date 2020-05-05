@@ -1,0 +1,6 @@
+Propiedades de conexion: Encrypted with 128-bit encryption
+Version TLS: TLS 1.1
+Mecanismos criptograficos: 
+    - AES_128_CBC -> conection
+    - SHA1 -> message autentification
+    - ECDHE_RSA -> key exchange mechanism
