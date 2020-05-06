@@ -1,0 +1,477 @@
+SMTP:
+
+220 debian ESMTP Postfix (Debian/GNU)
+
+EHLO host1.lab.ser
+
+250-debian
+
+250-PIPELINING
+
+250-SIZE 10240000
+
+250-VRFY
+
+250-ETRN
+
+250-ENHANCEDSTATUSCODES
+
+250-8BITMIME
+
+250 DSN
+
+MAIL FROM:<ana@mailserver.lab.ser> SIZE=5929
+
+250 2.1.0 Ok
+
+RCPT TO:<beni@mailserver.lab.ser>
+
+250 2.1.5 Ok
+
+DATA
+
+354 End data with <CR><LF>.<CR><LF>
+
+To: beni@mailserver.lab.ser
+
+From: Ana Sanchez Fernandez <ana@mailserver.lab.ser>
+
+Subject: patata2
+
+Message-ID: <5EB2E79B.8050400@mailserver.lab.ser>
+
+Date: Wed, 6 May 2020 18:36:43 +0200
+
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101
+
+ Icedove/38.7.0
+
+MIME-Version: 1.0
+
+Content-Type: application/pkcs7-mime; name="smime.p7m"; smime-type=enveloped-data
+
+Content-Transfer-Encoding: base64
+
+Content-Disposition: attachment; filename="smime.p7m"
+
+Content-Description: S/MIME Encrypted Message
+
+
+
+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
+
+AAAAAAA=
+
+.
+
+250 2.0.0 Ok: queued as 68BBE20DBC
+
+QUIT
+
+221 2.0.0 Bye
+
+
+
+IMAP:
+
+* OK Still here
+
+DONE
+
+85 OK Idle completed.
+
+86 check
+
+86 OK Check completed.
+
+87 UID fetch 2:* (FLAGS)
+
+* 1 FETCH (UID 1 FLAGS (\Seen \Recent))
+
+87 OK Fetch completed.
+
+88 IDLE
+
++ idling
+
+DONE
+
+88 OK Idle completed.
+
+89 append "Sent" (\Seen) {5929+}
+
+To: beni@mailserver.lab.ser
+
+From: Ana Sanchez Fernandez <ana@mailserver.lab.ser>
+
+Subject: patata2
+
+Message-ID: <5EB2E79B.8050400@mailserver.lab.ser>
+
+Date: Wed, 6 May 2020 18:36:43 +0200
+
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101
+
+ Icedove/38.7.0
+
+MIME-Version: 1.0
+
+Content-Type: application/pkcs7-mime; name="smime.p7m"; smime-type=enveloped-data
+
+Content-Transfer-Encoding: base64
+
+Content-Disposition: attachment; filename="smime.p7m"
+
+Content-Description: S/MIME Encrypted Message
+
+
+
+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
+
+AAAAAAA=
+
+
+
+* 2 EXISTS
+
+* 2 RECENT
+
+89 OK [APPENDUID 1588778444 2] Append completed.
+
+90 noop
+
+90 OK NOOP completed.
+
+91 IDLE
+
++ idling
+
+DONE
+
+91 OK Idle completed.
+
+92 noop
+
+92 OK NOOP completed.
+
+93 UID fetch 2:* (FLAGS)
+
+* 2 FETCH (UID 2 FLAGS (\Seen \Recent))
+
+93 OK Fetch completed.
+
+94 UID fetch 2 (UID RFC822.SIZE FLAGS BODY.PEEK[HEADER.FIELDS (From To Cc Bcc Subject Date Message-ID Priority X-Priority References Newsgroups In-Reply-To Content-Type Reply-To)])
+
+* 2 FETCH (UID 2 RFC822.SIZE 5929 FLAGS (\Seen \Recent) BODY[HEADER.FIELDS (FROM TO CC BCC SUBJECT DATE MESSAGE-ID PRIORITY X-PRIORITY REFERENCES NEWSGROUPS IN-REPLY-TO CONTENT-TYPE REPLY-TO)] {275}
+
+To: beni@mailserver.lab.ser
+
+From: Ana Sanchez Fernandez <ana@mailserver.lab.ser>
+
+Subject: patata2
+
+Message-ID: <5EB2E79B.8050400@mailserver.lab.ser>
+
+Date: Wed, 6 May 2020 18:36:43 +0200
+
+Content-Type: application/pkcs7-mime; name="smime.p7m"; smime-type=enveloped-data
+
+
+
+)
+
+94 OK Fetch completed.
+
+95 IDLE
+
++ idling
+
+

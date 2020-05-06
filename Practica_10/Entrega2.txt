@@ -1,0 +1,18 @@
+root@mailserver:/home/usuario# telnet localhost 143
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+* OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE AUTH=PLAIN] Dovecot ready.
+a LOGIN beni beni
+a OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS MULTIAPPEND UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS SPECIAL-USE] Logged in
+a LIST "" *
+* LIST (\NoInferiors \UnMarked \Sent) "/" "Sent"
+* LIST (\NoInferiors \UnMarked \Trash) "/" "Trash"
+* LIST (\HasNoChildren) "/" "INBOX"
+a OK List completed.
+a EXAMINE Inbox
+a NO [SERVERBUG] Internal error occurred. Refer to server log for more information. [2020-05-06 17:16:59]
+a LOGOUT
+* BYE Logging out
+a OK Logout completed.
+Connection closed by foreign host.

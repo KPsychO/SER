@@ -1,0 +1,10 @@
+
+Sin encriptacion:
+Content-Type: text/plain; charset=utf-8; format=flowed
+
+Con encriptacion:
+Content-Type: application/pkcs7-mime; name="smime.p7m"; smime-type=enveloped-data
+
+
+En el primer caso (sin encriptar) nos indica que se trata de un mensaje en texto plano y codificacion utf-8.
+En el segundo caso no indica que se trata de un mensaje encriptado (enveloped-data) con pkcs7.

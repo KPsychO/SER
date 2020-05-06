@@ -1,0 +1,137 @@
+SMTP:
+220 debian ESMTP Postfix (Debian/GNU)
+
+EHLO host1.lab.ser
+
+250-debian
+
+250-PIPELINING
+
+250-SIZE 10240000
+
+250-VRFY
+
+250-ETRN
+
+250-ENHANCEDSTATUSCODES
+
+250-8BITMIME
+
+250 DSN
+
+MAIL FROM:<ana@mailserver.lab.ser> SIZE=393
+
+250 2.1.0 Ok
+
+RCPT TO:<beni@mailserver.lab.ser>
+
+250 2.1.5 Ok
+
+DATA
+
+354 End data with <CR><LF>.<CR><LF>
+
+To: beni@mailserver.lab.ser
+
+From: Ana Sanchez Fernandez <ana@mailserver.lab.ser>
+
+Subject: patata
+
+Message-ID: <5EB2D5CB.4070006@mailserver.lab.ser>
+
+Date: Wed, 6 May 2020 17:20:43 +0200
+
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101
+
+ Icedove/38.7.0
+
+MIME-Version: 1.0
+
+Content-Type: text/plain; charset=utf-8; format=flowed
+
+Content-Transfer-Encoding: 7bit
+
+
+
+patata
+
+.
+
+250 2.0.0 Ok: queued as BCA2320D8D
+
+QUIT
+
+221 2.0.0 Bye
+
+
+IMAP:
+
+* OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE AUTH=PLAIN] Dovecot ready.
+
+1 authenticate plain
+
++ 
+
+AGFuYQBhbmE=
+
+1 OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS MULTIAPPEND UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS SPECIAL-USE] Logged in
+
+2 namespace
+
+* NAMESPACE (("" "/")) NIL NIL
+
+2 OK Namespace completed.
+
+3 ID ("name" "Icedove" "version" "38.7.0")
+
+* ID NIL
+
+3 OK ID completed.
+
+4 list (subscribed) "" "*" return (special-use)
+
+4 OK List completed.
+
+5 list "" "INBOX"
+
+* LIST (\HasNoChildren) "/" "INBOX"
+
+5 OK List completed.
+
+6 list "" "Trash"
+
+6 OK List completed.
+
+7 create "Trash"
+
+7 OK Create completed.
+
+8 subscribe "Trash"
+
+8 OK Subscribe completed.
+
+9 list "" "Trash"
+
+* LIST (\NoInferiors \UnMarked \Trash) "/" "Trash"
+
+9 OK List completed.
+
+10 list "" "Sent"
+
+10 OK List completed.
+
+11 create "Sent"
+
+11 OK Create completed.
+
+12 subscribe "Sent"
+
+12 OK Subscribe completed.
+
+13 list "" "Sent"
+
+* LIST (\NoInferiors \UnMarked \Sent) "/" "Sent"
+
+13 OK List completed.
+
+
